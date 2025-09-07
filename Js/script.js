@@ -1,3 +1,11 @@
+// Remove active class
+const removeActive = () => {
+    const allBtn = document.querySelectorAll("#catagori_container li");
+    for(let btn of allBtn){
+        btn.classList.remove("active_btn");
+    }
+}
+
 // load all trees
 const loadAllTrees = () => {
     const url = "https://openapi.programming-hero.com/api/plants";
@@ -71,8 +79,12 @@ const displayCatagories = (catagories) => {
     // All Trees option at first
     const allTrees = document.createElement("li");
         allTrees.innerHTML = "All Trees";
-        allTrees.className = "font-semibold py-1";
-        allTrees.onclick = () => loadAllTrees();
+        allTrees.className = "font-semibold py-1 active_btn";
+        allTrees.onclick = () => {
+            removeActive();
+            allTrees.classList.add("active_btn");
+            loadAllTrees();
+        } 
         catagoriContainer.append(allTrees);
 
     for(let catagori of catagories){
@@ -80,7 +92,11 @@ const displayCatagories = (catagories) => {
         const li = document.createElement("li");
         li.textContent = catagori.category_name;
         li.className = "font-semibold py-1";
-        li.onclick = () => loadCatagorieTrees(catagori.id);
+        li.onclick = () => {
+            removeActive();
+            li.classList.add("active_btn");
+            loadCatagorieTrees(catagori.id);
+        } 
        catagoriContainer.append(li);
     }
 };
