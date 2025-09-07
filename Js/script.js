@@ -52,30 +52,40 @@ const loadCatagories = () => {
     .then((data) => displayCatagories(data.categories))
 };
 
+// Load catagories tree
+const loadCatagorieTrees = (id) => {
+    const url = `https://openapi.programming-hero.com/api/category/${id}`;
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+        displayAllTrees(data.plants)
+    })
+}
 
 // Display Catagories functionality
 const displayCatagories = (catagories) => {
     // Get the catagori_container and empty
     const catagoriContainer = document.getElementById("catagori_container");
     catagoriContainer.innerHTML = "";
+
     // All Trees option at first
     const allTrees = document.createElement("li");
-        allTrees.innerHTML = `
-        <li class="font-semibold py-1">All Trees</li>
-        `;
-    catagoriContainer.append(allTrees);
+        allTrees.innerHTML = "All Trees";
+        allTrees.className = "font-semibold py-1";
+        allTrees.onclick = () => loadAllTrees();
+        catagoriContainer.append(allTrees);
 
     for(let catagori of catagories){
         // Creat Element
         const li = document.createElement("li");
-        li.innerHTML = `
-            <li class="font-semibold py-1">${catagori.category_name}</li>
-        `;    
+        li.textContent = catagori.category_name;
+        li.className = "font-semibold py-1";
+        li.onclick = () => loadCatagorieTrees(catagori.id);
        catagoriContainer.append(li);
     }
 };
 
-loadCatagories()
+loadCatagories();
 
 
 
