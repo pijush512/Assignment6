@@ -14,6 +14,43 @@ const loadAllTrees = () => {
     .then((data) => displayAllTrees(data.plants))
 };
 
+// open modal
+const openModal = (id) => {
+    fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+        const tree = data.plants;
+        
+    const modalContainer = document.getElementById("modal_container");
+    modalContainer.innerHTML =  `
+        <div class=" card bg-base-100 shadow-sm h-full flex flex-col p-4">
+            <figure class="w-full h-60 object-cover ">
+                <img src="${tree.image}" alt="${tree.name}" />
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title">${tree.name}</h2>
+                <p>${tree.description}</p>
+                <div class="card-actions justify-between items-center">
+                    <div class="bg-green-200 rounded-2xl px-4 py-1 text-lg">${tree.category}</div>
+                    <div class="font-bold text-lg">${tree.price}</div>
+                </div>
+                <button class="bg-green-600 rounded-3xl py-2 text-white text-lg mt-4">Add to Cart</button>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+                
+        </div>
+                
+    `;
+        document.getElementById("my_modal_5").showModal();
+    })
+}
+
+
+
 // Display All Trees
 const displayAllTrees = (allTrees) => {
     const cardContainer = document.getElementById("card_container");
@@ -29,7 +66,7 @@ const displayAllTrees = (allTrees) => {
                         alt="${tree.name}" />
                 </figure>
                 <div class="card-body">
-                    <h2 class="card-title">
+                    <h2 onclick="openModal(${tree.id})" class="card-title">
                         ${tree.name}
                     </h2>
                     <p>${tree.description}</p>
