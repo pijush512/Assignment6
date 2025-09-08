@@ -15,12 +15,30 @@
         <title>Assignment 6</title>
     </head>
     <body>
-        <header class="bg-green-600">
-            <div class="navbar w-11/12 mx-auto flex flex-col gap-2 md:flex-row">
+        <header>
+            <div class="navbar bg-green-600">
                 <div class="navbar-start">
-                    <a class=" font-bold text-xl text-white">Green Earth</a>
+                    <div class="dropdown">
+                        <div tabindex="0" role="button"
+                            class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor"> <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                        </div>
+                        <ul
+                            tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a>About</a></li>
+                            <li><a>Gallery</a></li>
+                            <li><a>Plant a Tree</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-xl text-white">Green Earth</a>
                 </div>
-                <div class="navbar-center">
+                <div class="navbar-center hidden lg:flex">
                     <ul class="flex gap-10 text-white font-semi">
                         <li><a>About</a></li>
                         <li><a>Gallery</a></li>
@@ -28,8 +46,7 @@
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a
-                        class=" bg-yellow-300 rounded-3xl py-2 px-4 text-green-600">Plant
+                    <a class="bg-yellow-300 rounded-3xl py-2 px-4 text-green-600">Plant
                         a Tree</a>
                 </div>
             </div>
@@ -37,7 +54,8 @@
         <!-- banner -->
         <section class="bg-green-100 py-20"
             style="background-image: url('./Images/hero-leaf1.png'), url('./Images/hero-leaf2.png'); background-repeat: no-repeat, no-repeat; background-position: left, right;">
-            <h1 class="text-3xl font-bold text-center">Plant a Tree, Grow a
+
+            <h1 class="text-3xl font-bold text-center ">Plant a Tree, Grow a
                 Future</h1>
             <p class="text-center py-10">Join our mission to plant 1 million
                 trees and make the Earth greener for future <br> generations.
@@ -53,36 +71,117 @@
                     Trees</h1>
                 <div
                     class="flex flex-col  md:flex-row justify-between w-11/12 mx-auto pt-10">
-                    <div class="left w-[15%] ">
+                    <div class="left md:w-[15%] ">
                         <h3 class="text-xl font-bold">Categories</h3>
-                        <ul id="catagori_container">
+                        <ul class="mb-5" id="catagori_container">
 
                         </ul>
                     </div>
 
-                    <div class="center w-[80%] px-4">
+                    <div class="center md:w-[80%] px-4">
                         <div id="card_container"
                             class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
                         </div>
                     </div>
 
-                    <div class="right w-[15%] bg-white px-3 py-2">
+                    <div class="right sm:mt-5 md:w-[15%] bg-white px-3 py-2">
                         <h3 class="font-bold">Your Cart</h3>
 
                     </div>
                 </div>
+                <!-- About the  Campaign section -->
+                <section class="md:mx-[20%] pb-10">
+                    <h3 class="text-2xl text-center font-bold pt-10">About the
+                        Campaign</h3>
+                    <div
+                        class="mt-9 flex flex-col md:flex-row items-center justify-between gap-10">
+                        <div class="w-full">
+                            <img class="w-full" src="Images/about.png" alt>
+                        </div>
+                        <div class="w-full">
+                            <p class="text-[16px] sm:text-center">Green Earth is
+                                a global tree plantation initiative dedicated to
+                                fighting climate change. Since our start, we’ve
+                                planted over 500,000 trees worldwide. By joining
+                                our campaign, you help restore forests, create
+                                habitats for wildlife, and combat global
+                                warming.</p>
+                            <ul class="list-disc mt-4">
+                                <li>Restoration of natural habitats</li>
+                                <li>Improvement of air quality</li>
+                                <li>Support for local communities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <!-- our impact section -->
+            <section class="bg-green-200 ">
+                <h3 class="text-2xl text-center font-bold pt-15 mb-8 ">Our
+                    Impact</h3>
+
+                <div
+                    class="w-11/12 mx-auto flex flex-col md:flex-row justify-between items-center pb-15 gap-4">
+
+                    <div class="w-[400px] p-6 bg-white text-center rounded-lg">
+                        <h1 class="text-green-500 font-bold text-xl">500k+</h1>
+                        <p class="text-gray-500 mt-1">Trees Planted</p>
+                    </div>
+                    <div class="w-[400px] p-6 bg-white text-center rounded-lg">
+                        <h1 class="text-green-500 font-bold text-xl">120k+</h1>
+                        <p class="text-gray-500 mt-1">Communities Involved</p>
+                    </div>
+                    <div class="w-[400px] p-6 bg-white text-center rounded-lg">
+                        <h1 class="text-green-500 font-bold text-xl">30k+</h1>
+                        <p class="text-gray-500 mt-1">Countries Reached</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Plant a tree -->
+            <section class="text-center bg-green-800 pb-20">
+                <h3
+                    class="text-2xl text-white text-center font-bold pt-15 mb-8 ">Plant
+                    a Tree Today</h3>
+
+                <div
+                    class="bg-green-700 w-full md:w-[25%] mx-auto py-7 rounded-lg">
+                    <form action>
+                        <input
+                            class="bg-white w-[90%] rounded-lg border-none h-9 pl-4 mb-4"
+                            type="text" placeholder="your Name">
+
+                        <input
+                            class="bg-white w-[90%] rounded-lg border-none h-9 pl-4 mb-4"
+                            type="text" placeholder="your Name">
+
+                        <select
+                            class="bg-white w-[90%] rounded-lg border-none h-9 pl-4 mb-4">
+                            <option value>Number of Trees</option>
+                        </select>
+
+                        <input
+                            class="bg-yellow-500 w-[90%] rounded-lg border-none h-9 pl-4 text-green-800"
+                            type="button" value="Donate Now">
+                    </form>
+                </div>
             </section>
         </main>
+        <!-- Footer -->
+        <footer class="bg-green-900">
+            <p class="text-white text-center py-5">© 2025 Green Earth. All
+                Rights Reserved.</p>
+        </footer>
 
         <!-- modal -->
         <!-- Open the modal using ID.showModal() method -->
         <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-            <div id="modal_container" class="modal-box">
-                
+            <div id="modal_container" class="modal-box w-11/12 max-w-md">
+
             </div>
-                
+
         </dialog>
 
         <!-- JS Link -->

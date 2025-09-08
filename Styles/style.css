@@ -7,3 +7,27 @@
     
     border-radius: 4px;
 }
+
+
+/* 
+<div class="navbar w-11/12 mx-auto flex flex-col gap-2 md:flex-row">
+                <div class="navbar-start">
+                    <a class=" font-bold text-xl text-white">Green Earth</a>
+                </div>
+                <div class="navbar-center">
+                    <ul class="flex gap-10 text-white font-semi">
+                        <li><a>About</a></li>
+                        <li><a>Gallery</a></li>
+                        <li><a>Plant a Tree</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a
+                        class=" bg-yellow-300 rounded-3xl py-2 px-4 text-green-600">Plant
+                        a Tree</a>
+                </div>
+            </div>
+
+
+
+*/

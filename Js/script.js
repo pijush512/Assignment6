@@ -30,11 +30,11 @@ const openModal = (id) => {
             <div class="card-body">
                 <h2 class="card-title">${tree.name}</h2>
                 <p>${tree.description}</p>
-                <div class="card-actions justify-between items-center">
-                    <div class="bg-green-200 rounded-2xl px-4 py-1 text-lg">${tree.category}</div>
-                    <div class="font-bold text-lg">${tree.price}</div>
+                <div class="card-actions flex flex-col">
+                    <div class=" text-lg"><span class="font-bold">Category:</span> ${tree.category}</div>
+                    <div class="text-lg"><span class="font-bold">Price:</span> ৳${tree.price}</div>
                 </div>
-                <button class="bg-green-600 rounded-3xl py-2 text-white text-lg mt-4">Add to Cart</button>
+                
             </div>
             <div class="modal-action">
                 <form method="dialog">
@@ -73,7 +73,7 @@ const displayAllTrees = (allTrees) => {
                     <div class="card-actions justify-between items-center">
                         <div
                             class="bg-green-200 rounded-2xl px-4 py-1 text-lg">${tree.category}</div>
-                        <div class="font-bold text-lg">${tree.price}</div>
+                        <div class="font-bold text-lg">৳ ${tree.price}</div>
                     </div>
                     <button
                         class="bg-green-600 rounded-3xl py-2 text-white text-lg mt-4">Add
