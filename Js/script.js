@@ -66,7 +66,7 @@ const displayAllTrees = (allTrees) => {
                         alt="${tree.name}" />
                 </figure>
                 <div class="card-body">
-                    <h2 onclick="openModal(${tree.id})" class="card-title">
+                    <h2 onclick="openModal(${tree.id})" class="card-title cursor-pointer">
                         ${tree.name}
                     </h2>
                     <p>${tree.description}</p>
@@ -116,7 +116,7 @@ const displayCatagories = (catagories) => {
     // All Trees option at first
     const allTrees = document.createElement("li");
         allTrees.innerHTML = "All Trees";
-        allTrees.className = "font-semibold py-1 active_btn";
+        allTrees.className = "font-semibold py-1 active_btn hover:bg-green-200 cursor-pointer";
         allTrees.onclick = () => {
             removeActive();
             allTrees.classList.add("active_btn");
@@ -128,7 +128,7 @@ const displayCatagories = (catagories) => {
         // Creat Element
         const li = document.createElement("li");
         li.textContent = catagori.category_name;
-        li.className = "font-semibold py-1";
+        li.className = "font-semibold py-1 hover:bg-green-200 cursor-pointer";
         li.onclick = () => {
             removeActive();
             li.classList.add("active_btn");
